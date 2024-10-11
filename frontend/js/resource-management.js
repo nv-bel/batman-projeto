@@ -1,0 +1,106 @@
+let resources = [
+  {
+    name: "Laptop",
+    quantity: 10,
+    category: "Equipamento",
+    status: "Disponível",
+  },
+  {
+    name: "Câmera de Segurança",
+    category: "Dispositivo de Seguranca",
+    quantity: 5,
+    status: "Em Uso",
+  },
+  { name: "Batmovel", quantity: 3, category: "Veiculo", status: "Disponível" },
+  {
+    name: "Drone Master",
+    quantity: 2,
+    category: "Dispositivo de Seguranca",
+    status: "Danificado",
+  },
+  {
+    name: "Drone Plus",
+    quantity: 3,
+    category: "Dispositivo de Seguranca",
+    status: "Em uso",
+  }
+]; // Array para armazenar os recursos já cadastrados
+
+// Função para atualizar a lista de recursos na tela
+function updateResourceList() {
+  const resourceList = document.getElementById("resourceList");
+  resourceList.innerHTML = ""; // Limpa a lista antes de atualizar
+
+  resources.forEach((resource, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${resource.name} | Categoria: ${resource.category} | Quantidade: ${resource.quantity} | Status: ${resource.status}`;
+
+    // Botão para remover recurso
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remover";
+    removeButton.classList.add("remove-button"); // Classe para botão remover
+    removeButton.onclick = () => removeResource(index);
+
+    // Botão para editar recurso
+    const editButton = document.createElement("button");
+    editButton.textContent = "Editar";
+    editButton.classList.add("edit-button"); // Classe para botão editar
+    editButton.onclick = () => editResource(index);
+
+    li.appendChild(removeButton);
+    li.appendChild(editButton);
+    resourceList.appendChild(li);
+  });
+}
+
+// Função para remover recurso
+function removeResource(index) {
+  resources.splice(index, 1); // Remove o recurso do array
+  updateResourceList(); // Atualiza a lista na tela
+}
+
+// Função para editar recurso
+function editResource(index) {
+  const resource = resources[index];
+  document.getElementById("resourceName").value = resource.name;
+  document.getElementById("resourceQuantity").value = resource.quantity;
+  document.getElementById("resourceStatus").value = resource.status;
+
+  // Remove o recurso após edição para evitar duplicatas
+  removeResource(index);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Inicializa a lista de recursos ao carregar a página
+  updateResourceList();
+
+  document
+    .getElementById("resourceForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Captura os valores do formulário
+      const resourceName = document.getElementById("resourceName").value;
+      const resourceQuantity =
+        document.getElementById("resourceQuantity").value;
+      const resourceStatus = document.getElementById("resourceStatus").value;
+      const resourceCategory =
+        document.getElementById("resourceCategory").value; // Captura a categoria
+
+      // Adiciona o novo recurso ao array de recursos
+      resources.push({
+        name: resourceName,
+        quantity: parseInt(resourceQuantity),
+        status: resourceStatus,
+        category: resourceCategory, // Inclui a categoria
+      });
+
+      // Atualiza a lista de recursos na tela
+      updateResourceList();
+
+      // Limpa o formulário
+      this.reset();
+    });
+});
+
+export { resources };

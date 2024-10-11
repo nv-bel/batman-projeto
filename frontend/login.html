@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Wayne Industries</title>
+
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+        <div class="login-box">
+            <img class="img-bat-logo" src="img/bat-logo.svg" alt="Batman logo" />
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">E-mail</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <div class="input-group">
+                    <label for="user-role">Selecione o tipo de usuário</label>
+                    <select id="user-role" name="user-role" required>
+                        <option value="funcionario">Funcionário</option>
+                        <option value="gerente">Gerente</option>
+                        <option value="admin-seguranca">Administrador de Segurança</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button class="button-entrar" type="submit">Entrar</button>
+                </div>
+                <div class="forgot-password">
+                    <a href="/forgot-password">Esqueci a senha</a>
+                </div>
+                <div class="error-message" id="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>

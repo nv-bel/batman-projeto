@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Wayne Industries</title>
+    <link rel="stylesheet" href="css/dashboard2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="resource-management.html">Gerenciamento de Recursos</a>
+      <a href="dashboard2.html">Dashboard</a>
+    </div>
+    <div class="content">
+      <div class="dashboard-container">
+        <h1>Painel de Controle - Indústrias Wayne</h1>
+
+        <!-- Seção de Resumo de Recursos -->
+        <div class="resource-summary">
+          <h2>Resumo de Recursos</h2>
+          <div id="total-resources">Total de Recursos:</div>
+          <div id="resource-breakdown">Distribuição por Categoria:</div>
+        </div>
+
+        <!-- Seção de Usuários Ativos -->
+        <div class="user-summary">
+          <h2>Usuários Autenticados</h2>
+          <div id="active-users">Usuários Ativos:</div>
+          <div id="last-login">Último Login:</div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="dashboard-charts">
+          <h2>Estatísticas de Recursos</h2>
+          <canvas id="resourceChart"></canvas>
+          <!-- Gráfico de barras ou pizza -->
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script type="module" src="js/dashboard2.js"></script>
+    </div>
+  </body>
+</html>
