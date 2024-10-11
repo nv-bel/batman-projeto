@@ -12,6 +12,20 @@ function displayAuthenticatedUsers() {
         userList.appendChild(li);
     });
 }
+// import { authenticatedUsers } from './login.js'; // Importe o array
+
+// Função para exibir os usuários autenticados no dashboard
+// function displayAuthenticatedUsers() {
+//     const userList = document.getElementById('userList');
+//     userList.innerHTML = ''; // Limpa a lista antes de exibir
+
+//     authenticatedUsers.forEach(user => {
+//         const li = document.createElement('li');
+//         li.textContent = `${user.username} - Role: ${user.role}`;
+//         userList.appendChild(li);
+//     });
+// }
+
 
 // Função para atualizar o resumo dos recursos no dashboard
 function updateResourceSummary() {
@@ -55,4 +69,5 @@ function generateResourceChart() {
 // Chama as funções
 updateResourceSummary();
 generateResourceChart();
-displayAuthenticatedUsers();
+// displayAuthenticatedUsers();
+

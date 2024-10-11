@@ -26,12 +26,19 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         displayMessage(welcomeMessage);
         // Redirecionar para o dashboard
         setTimeout(() => {
-            window.location.href = 'dashboard.html'; // Redireciona para o dashboard
+            window.location.href = 'dashboard2.html'; // Redireciona para o dashboard
         }, 1000);
     } else {
         displayMessage('Usuário ou senha inválidos.');
     }
 });
+
+// Função para exibir mensagens
+function displayMessage(msg) {
+    const messageElement = document.getElementById('error-message');
+    messageElement.textContent = msg;
+    messageElement.style.color = 'red'; // Define a cor da mensagem de erro
+}
 
 // Função para exibir mensagens
 function displayMessage(msg) {
