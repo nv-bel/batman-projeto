@@ -56,4 +56,4 @@ Temos 3 tipos de acesso:
 - Gerenciamento de Recursos: Funcional, logica feita em lista. Eh possivel adicionar, editar e remover recursos.
   Foi adicionado alguns recursos por padrao para facilitar na interface do prototipo.
   
-- Dashboard: Resumo dos recursos e os Graficos estao sincronizados com o Array original. Atividade dos usuarios eh estatico e ultimo login simulando a data e hora atual.
+- Dashboard: Resumo dos recursos e os Graficos estao sincronizados com o Array original. Grafico de barras para visualizar a quantidade de recursos por Categoria e, um grafico de pizza voltado para a quantidade de recursos por Status. Atividade dos usuarios eh estatico e ultimo login simulando a data e hora atual.
