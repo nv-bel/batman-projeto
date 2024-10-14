@@ -62,7 +62,29 @@
         <ul id="resourceList"></ul>
       </div>
     </div>
-    <script type="module" src="js/resource-management.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const userRole = sessionStorage.getItem('userRole');
 
+        // Redireciona ou restringe acesso com base no papel do usuário
+        if (userRole === null) {
+            // Se não houver papel, redireciona para a página de login
+            window.location.href = 'login.html';
+        } else if (userRole === 'funcionario') {
+            // Se o usuário for Funcionário, oculta funcionalidades de edição
+            document.getElementById('resourceForm').style.display = 'none';
+            // Você também pode redirecionar para a página de gerenciamento de recursos
+        } else if (userRole === 'gerente') {
+            // O Gerente tem acesso a gerenciamento, mas não ao dashboard
+
+            // Se a página atual for o dashboard, redirecione
+            if (window.location.href.includes('dashboard2.html')) {
+                window.location.href = 'resource-management.html';
+            }
+        }
+    });
+    </script>
+    <script type="module" src="js/resource-management.js" defer></script>
+    
   </body>
 </html>
