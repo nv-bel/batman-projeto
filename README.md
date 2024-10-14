@@ -28,24 +28,23 @@ Temos 3 tipos de acesso:
    
    Tem acesso completo.
 
-   Usuário:
+   - Usuário: bruce.w@wayne.com
    
-   Senha:
+   - Senha: bruce123
 
-  
 3. Gerente:
    
    Acesso permitido somente a página de "Gerenciamento de Recursos". Pode Adicionar, Editar e Remover qualquer recurso.
 
-   Usuário:
+   - Usuário: dick.g@wayne.com
    
-   Senha:
+   - Senha: dick123
 
   
 5. Funcionario:
    
    Acesso permitido somente a página de "Gerenciamento de Recursos". Pode visualizar a Lista de Recursos.
 
-   Usuário:
+   - Usuário: alfred.p@wayne.com
    
-   Senha
+   - Senha: alfred123
