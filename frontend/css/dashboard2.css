@@ -40,7 +40,7 @@ body {
 }
 
 .content {
-  padding: 80px 20px 20px 20px; /* Ajusta o padding-top para evitar que o conteúdo fique sob a navbar */
+  padding: 100px 40px 20px 40px; /* Ajusta o padding-top para evitar que o conteúdo fique sob a navbar */
 }
 .dashboard-container {
   display: flex;
@@ -55,22 +55,36 @@ h1 {
   margin-bottom: 20px;
 }
 
-.resource-summary,
-.user-summary,
-.dashboard-charts {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
+/* Estilo para o container do resumo e dos usuários */
+.summary-container {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.resource-summary h2,
-.user-summary h2,
-.dashboard-charts h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.resource-summary, .user-summary {
+  width: 48%; /* Faz as duas caixas ocuparem metade da tela */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para o container dos gráficos */
+.dashboard-charts {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.chart-container {
+  width: 48%; /* Faz os gráficos ocuparem metade da tela */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 #total-resources,
 #resource-breakdown,
