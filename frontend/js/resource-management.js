@@ -70,7 +70,6 @@ function updateResourceList() {
 }
 
 
-
 // Função para remover recurso
 function removeResource(index) {
   resources.splice(index, 1); // Remove o recurso do array
