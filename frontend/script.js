@@ -37,11 +37,12 @@ document
 
     // Verifica se a autenticação foi bem-sucedida
     if (isAuthenticated) {
+      sessionStorage.setItem("userRole", userRole);
       displayMessage(welcomeMessage);
 
-      // Redirecionar para o dashboard
+      // Redirecionar para o gerenciamente de recursos.
       setTimeout(() => {
-        window.location.href = "dashboard2.html"; // Redireciona para o dashboard
+        window.location.href = "resource-management.html"; // Redireciona para o gerenciamente de recursos.
       }, 1000);
     } else {
       displayMessage("Usuário ou senha inválidos.");
@@ -54,11 +55,3 @@ function displayMessage(msg) {
   messageElement.textContent = msg;
   messageElement.style.color = "red"; // Define a cor da mensagem de erro
 }
-
-// Função para exibir mensagens
-function displayMessage(msg) {
-  const messageElement = document.getElementById("error-message");
-  messageElement.textContent = msg;
-  messageElement.style.color = "red"; // Define a cor da mensagem de erro
-}
-
