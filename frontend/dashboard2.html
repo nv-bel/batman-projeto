@@ -20,37 +20,51 @@
     <div class="content">
       <div class="dashboard-container">
         <h1>Painel de Controle - Indústrias Wayne</h1>
+        <div class="summary-container">
+          <!-- Seção de Resumo de Recursos -->
+          <div class="resource-summary">
+            <h2>Resumo de Recursos</h2>
+            <div id="total-resources">Total de Recursos:</div>
+            <div id="resource-breakdown">Distribuição por Categoria:</div>
+          </div>
 
-        <!-- Seção de Resumo de Recursos -->
-        <div class="resource-summary">
-          <h2>Resumo de Recursos</h2>
-          <div id="total-resources">Total de Recursos:</div>
-          <div id="resource-breakdown">Distribuição por Categoria:</div>
-        </div>
-
-        <!-- Seção de Usuários Ativos -->
-        <div class="user-summary">
-          <h2>Usuários Autenticados</h2>
-          <div id="active-users">Usuários Ativos:</div>
-          <div id="last-login">Último Login:</div>
+          <div class="user-summary">
+            <h2>Usuários Autenticados</h2>
+            <div id="active-users">Usuários Ativos:</div>
+            <div id="last-login">Último Login:</div>
+          </div>
         </div>
 
         <!-- Gráficos -->
         <div class="dashboard-charts">
-          <h2>Recursos Por Categoria</h2>
-          <canvas id="resourceChart"></canvas>
-          
-        </div>
-
-        <div class="dashboard-charts">
-          <h2>Estatísticas de Recursos</h2>
-          <canvas id="resourceChart"></canvas>
-          <!-- Gráfico de barras ou pizza -->
+          <div class="chart-container">
+            <h2>Status dos Recursos</h2>
+            <canvas id="statusChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h2>Categorias dos Recursos</h2>
+            <canvas id="categoryChart"></canvas>
+          </div>
         </div>
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
       <script type="module" src="js/dashboard2.js"></script>
+
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const userRole = sessionStorage.getItem('userRole');
+
+            if (userRole !== 'admin') {
+              // Se o usuário não for admin, mostra uma mensagem de acesso negado
+              alert("Acesso negado!! Você não tem permissão.");
+
+              // Redireciona para a página de login ou para outra página apropriada
+              window.location.href = "resource-management.html"; //
+            }
+        });
+      </script>
     </div>
   </body>
 </html>
