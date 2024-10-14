@@ -14,22 +14,22 @@ document
     // Autenticação com base no tipo de usuário
     if (
       userRole === "admin-seguranca" &&
-      username === "admin" &&
-      password === "admin123"
+      username === "bruce.wayne" &&
+      password === "bruce123"
     ) {
       isAuthenticated = true;
       welcomeMessage = "Bem-vindo, Administrador de Segurança!";
     } else if (
       userRole === "gerente" &&
-      username === "gerente" &&
-      password === "gerente123"
+      username === "dick.grayson" &&
+      password === "dick123"
     ) {
       isAuthenticated = true;
       welcomeMessage = "Bem-vindo, Gerente!";
     } else if (
       userRole === "funcionario" &&
-      username === "funcionario" &&
-      password === "func123"
+      username === "alfred.pennyworth" &&
+      password === "alfred123"
     ) {
       isAuthenticated = true;
       welcomeMessage = "Bem-vindo, Funcionário!";
