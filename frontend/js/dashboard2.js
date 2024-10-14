@@ -22,11 +22,24 @@ function updateResourceSummary() {
 }
 
 function updateActiveUsers() {
+  // Função para formatar a data e hora atual
+  function getCurrentDateTime() {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    
+    // Formato dd/mm/yyyy hh:mm
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
+  }
+
   // Simulando os usuários autenticados como exemplo de protótipo
   const activeUsers = [
-    { username: "admin", role: "A", lastLogin: "14/10/2024 08:00" },
-    { username: "gerente", role: "G", lastLogin: "14/10/2024 09:00" },
-    { username: "funcionario", role: "F", lastLogin: "14/10/2024 10:00" },
+    { username: "bruce.w", role: "A", lastLogin: getCurrentDateTime() },
+    { username: "dick.g", role: "G", lastLogin: getCurrentDateTime() },
+    { username: "alfred.p", role: "F", lastLogin: getCurrentDateTime() },
   ];
 
   const activeUsersElement = document.getElementById("active-users");
@@ -35,6 +48,7 @@ function updateActiveUsers() {
   activeUsersElement.textContent = `Usuários Ativos: ${activeUsers.length}`;
 
   let lastLoginInfo = "";
+
   activeUsers.forEach((user) => {
     lastLoginInfo += `<div><br> - ${user.username} (${user.role}) | Último login: ${user.lastLogin}</div>`;
   });
