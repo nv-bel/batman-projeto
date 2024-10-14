@@ -13,7 +13,8 @@
 }
 
 body {
-  font-family: "Ubuntu";
+  font-family: "Suse";
+  background: #1e1e1e;;
 }
 .navbar {
   background-color: #333;
@@ -53,6 +54,7 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  color: white;
 }
 
 /* Estilo para o container do resumo e dos usuários */
@@ -60,14 +62,16 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-direction: row;
 }
 
 .resource-summary, .user-summary {
-  width: 48%; /* Faz as duas caixas ocuparem metade da tela */
+  width: 45%;
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0a800;
 }
 
 /* Estilo para o container dos gráficos */
@@ -78,11 +82,12 @@ h1 {
 }
 
 .chart-container {
-  width: 48%; /* Faz os gráficos ocuparem metade da tela */
+  width: 48%; 
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0a800;
 }
 
 
